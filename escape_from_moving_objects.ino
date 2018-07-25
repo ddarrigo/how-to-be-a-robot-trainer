@@ -5,7 +5,7 @@ void escape_from_moving_objects (bool inhib,bool sup){
     //motorState=0; //stop
     if(!moving_object_detection()&&u>thres){    
       escape_from_movingO_toggle=true;
-      Serial.println("nothing is moving");
+      //Serial.println("nothing is moving");
       motorState=0;
     }
     if(moving_object_detection()&&u<=thres){

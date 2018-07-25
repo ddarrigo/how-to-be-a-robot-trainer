@@ -25,7 +25,7 @@
 
 void motorCTRL(bool tempLdir,bool tempRdir,bool on_off){ //true to go forward, false backwards
   int Ldir,Rdir;
-  byte spM=4+2; //speed vector module
+  byte spM=4+2-1; //speed vector module
   if(tempLdir)
     Ldir=+1;
   else

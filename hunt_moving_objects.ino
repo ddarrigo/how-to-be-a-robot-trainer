@@ -5,13 +5,16 @@ void hunt_moving_objects (bool inhib,bool sup){
     //motorState=0; //stop
     if(!moving_object_detection() ){    
       hunt_movingO_toggle=true;
-      if(IRs[0]==0||IRs[4]==0||IRs[3]==0)
-        motorState=5;
+      if(IRs[0]==0||IRs[4]==0)
+        motorState=5; //clockwise
       else 
-        if(IRs[1]==0||IRs[2]==0)
-          motorState=6;
+        if(IRs[3]==0||IRs[2]==0)
+          motorState=6; //counterclockwise
         else
-          motorState=0; //stop
+          if(IRs[1]==0)
+            motorState=byte(random(5,7));
+          else
+            motorState=0; //stop
     }
     if(moving_object_detection()&&u<=thres&&u>=4){
       Serial.println("moving object detected!");
@@ -19,7 +22,7 @@ void hunt_moving_objects (bool inhib,bool sup){
         hunt_movingO_toggle=false;
         motorState=7; //forward
       }        
-    }
+    } 
   }
   if(!sup){ //following actions
     motorState=motorState;

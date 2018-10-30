@@ -1,3 +1,4 @@
+//Obstacle detection riguarda solo i sensori IR
 void obstacleDetection(bool inhib,bool sup){
   //byte answer=0;
   //byte score=0;

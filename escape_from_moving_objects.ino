@@ -1,11 +1,8 @@
 void escape_from_moving_objects (bool inhib,bool sup){
-  //bool detection=
   byte thres=15;
   if(!inhib){ //sensors state    
-    //motorState=0; //stop
     if(!moving_object_detection()&&u>thres){    
       escape_from_movingO_toggle=true;
-      //Serial.println("nothing is moving");
       motorState=0;
     }
     if(moving_object_detection()&&u<=thres){
@@ -34,8 +31,6 @@ bool moving_object_detection(){
       answer=true;
     return answer;
   }  
-  oldU=u;
-  //Serial.println(moving);
-  
+  oldU=u;  
 }
 

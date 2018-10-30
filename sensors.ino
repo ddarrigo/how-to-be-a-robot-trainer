@@ -14,7 +14,4 @@ void buttonSmoother(){
     bitClear(buttonState,IRindex);
 }
 
-void ultrasonicSmoother(){
-  
-}
 

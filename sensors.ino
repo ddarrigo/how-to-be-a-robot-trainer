@@ -14,4 +14,12 @@ void buttonSmoother(){
     bitClear(buttonState,IRindex);
 }
 
+void ultrasonicSmoother(){
+  long inValue;
+  inValue=ultrasonic.MeasureInCentimeters();
+  if(inValue<threshold)
+    bitSet(ultraIn,IRindex);   
+  else
+    bitClear(ultraIn,IRindex);  //u=0 significa via libera
+}
 
